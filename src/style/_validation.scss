@@ -1,0 +1,43 @@
+.validation {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px;
+  &__form {
+    display: block;
+    width: 500px;
+  }
+  &__input-field {
+    display: block;
+    width: 100%;
+    border: 1px solid blue;
+    border-radius: 0;
+    padding: 20px 28px;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  &__send-btn {
+    border: none;
+    padding: 20px 28px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: rgb(55, 55, 255);
+    }
+    &:active {
+      background-color: rgb(31, 31, 190);
+    }
+  }
+}
+
+.error {
+  border-color: red;
+}
+
+.error-label {
+  display: block;
+  color: red;
+  margin-bottom: 10px;
+}
