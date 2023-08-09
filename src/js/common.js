@@ -21,10 +21,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (const input of allInputs) {
       removeError(input);
-      if (input.value == "") {
-        console.log("Ошибка поля");
-        createError(input, "Поле не заполнено!");
-        result = false;
+
+      if (input.dataset.minLength) {
+        if (input.value.length < input.dataset.minLength) {
+          removeError(input);
+          createError(
+            input,
+            `Минимальное кол-во символов: ${input.dataset.minLength}`
+          );
+          result = false;
+        }
+      }
+
+      if (input.dataset.maxLength) {
+        if (input.value.length > input.dataset.maxLength) {
+          removeError(input);
+          createError(
+            input,
+            `Макимальное кол-во символов: ${input.dataset.maxLength}`
+          );
+          result = false;
+        }
+      }
+
+      if (input.dataset.required == "true") {
+        if (input.value == "") {
+          createError(input, "Поле не заполнено!");
+          result = false;
+        }
       }
     }
     return result;

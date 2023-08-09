@@ -13,6 +13,7 @@
       <form action="" class="validation__form" id="add-from">
         <div class="validation__input-box">
           <input
+            data-required="true"
             class="validation__input-field"
             type="text"
             placeholder="Имя"
@@ -20,6 +21,7 @@
         </div>
         <div class="validation__input-box">
           <input
+            data-max-length="6"
             class="validation__input-field"
             type="text"
             placeholder="Фамилия"
@@ -27,6 +29,9 @@
         </div>
         <div class="validation__input-box">
           <input
+            data-required="true"
+            data-max-length="6"
+            data-mix-length="2"
             class="validation__input-field"
             type="text"
             placeholder="Отчество"
